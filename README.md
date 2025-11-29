@@ -24,8 +24,7 @@ It is designed to give users a smooth online shopping experience with clean UI, 
 - **Shopping Cart System** (Add, remove, update quantity)  
 - **Cart stored in LocalStorage** for session persistence  
 - **Product Preview Modal** with details & quantity selection  
-- **Login System** with hardcoded credentials  
-- **Logout Functionality**  
+- **Login System** with hardcoded credentials   
 - **Clean & Responsive Layout** for mobile and desktops  
 
 MiniMart focuses on providing a real-world e-commerce front-end feel without needing any backend or database.
