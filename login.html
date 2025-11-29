@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — MiniMart</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #231f1f;
+      --muted: #7b6e6e;
+
+      --accent: #ff5722;
+      --accent-600: #e64a19;
+
+      --surface: #fff4ee;
+
+      --font-sans: system-ui, "Segoe UI", Roboto;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: linear-gradient(120deg, #fff4ee, #ffffff);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 420px;
+      background: var(--bg);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,var(--accent),#8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 22px;
+      margin: 0 auto 14px;
+    }
+
+    h2 { margin: 0 0 6px; font-size: 26px; }
+    p { margin: 0 0 20px; color: var(--muted); }
+
+    .input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover { background: var(--accent-600); }
+
+    .link {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="logo">MM</div>
+    <h2>Welcome back</h2>
+    <p>Login to continue shopping</p>
+
+    <form onsubmit="event.preventDefault(); loginUser();">
+      <input type="email" id="email" class="input" placeholder="Email address" required />
+      <input type="password" id="password" class="input" placeholder="Password" required />
+      <button class="btn" type="submit">Login</button>
+    </form>
+
+    <a class="link" href="MiniMart.html">← Back to home</a>
+  </div>
+
+  <script>
+    function loginUser() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // 4 hard-coded credentials
+      const validUsers = [
+        { email: "user1@example.com", password: "pass123" },
+        { email: "user2@example.com", password: "secret456" },
+        { email: "admin@minimart.com", password: "admin789" },
+        { email: "shop@store.com", password: "999" }
+      ];
+
+      // Check credentials
+      const match = validUsers.find(
+        u => u.email === email && u.password === password
+      );
+
+      if (match) {
+        localStorage.setItem("minimart_user", email);
+        alert("Login successful!");
+        window.location.href = "MiniMart.html"; // GO TO MAIN STORE
+      } else {
+        alert("Invalid email or password");
+      }
+    }
+  </script>
+
+</body>
+</html>
