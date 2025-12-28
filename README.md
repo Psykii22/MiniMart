@@ -6,9 +6,9 @@
 ---
 
 ## 👤 **Student Information**
-**Name:** Saurabh Mishra 
-**College ID:** 2024KUEC2020
-**Batch:** C1
+**Name:**
+**College ID:**
+**Batch:**
 
 ---
 
